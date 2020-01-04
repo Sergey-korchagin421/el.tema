@@ -1,0 +1,40 @@
+<label>Action</label>
+<select id="action">
+  <option value=""></option>
+  <option value="action1">штррбление</option>
+  <option value="action2">убрка</option>
+   <option value="action3">сверление подрозетников</option>
+   <option value="action4">убрка</option>
+    <option value="action5">убрка</option>
+     <option value="action6">убрка</option>
+      <option value="action7">убрка</option>
+</select>
+<br>
+<ul id="tools">
+</ul>
+
+
+<script>
+const data = {
+  action1: ["штроборез", "пылик", "Tool3"],
+  action2: ["веник", "совок", "мешок"],
+  action3: ["Tool21", "Tool22", "Tool23"],
+    action4: ["Tool21", "Tool22", "Tool23"],
+     action5: ["Tool21", "Tool22", "Tool23"],
+      action6: ["Tool21", "Tool22", "Tool23"],
+       action7: ["Tool21", "Tool22", "Tool23"]
+};
+
+$(document).ready(function () {
+            $('#action').on('change', function () {
+              
+              $('#tools').html('');
+              
+              //alert(data[this.value]);
+              for (var i=0; i < data[this.value].length; i++) {
+                $('#tools').append("<li>" + data[this.value][i] + "</li>")
+              
+              }
+            });
+            })
+</script>
